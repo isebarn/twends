@@ -1,0 +1,41 @@
+What do we want?
+
+We want a collection of twitter hashtag trends by location (woe id)
+Worldwide
+ - #キスマイ10年
+ - #CDTVライブライブ
+ - #THEBOYZ_THESTEALER
+ - #あなた役の声優オーディション
+ - #MondayMotivation
+ - ゴルフマッチプレー対決
+ - チェン
+ - Dear D
+ - ペニス認証
+ - Whitty
+
+I cannot possibly understand why the japs are so much on top of this
+Also, hashtags dont seem to necessarily start with a #
+
+The location should be stored in a db
+location = {
+  id = woe id
+  value = location name
+}
+
+run = {
+  id = auto_increment()
+  Location = location.id
+  time = datetime.now()
+}
+
+trend = {
+  id = auto_increment()
+  Run = run.id
+  value = #hashtag value
+  place = number in line, 1 for most popular, 2 for second most popular ...
+}
+
+
+https://developer.twitter.com/en/portal/projects-and-apps
+API Key & Secret is consumer-key and consumer-secret
+Access Token & Secret is access-token and access-secret
