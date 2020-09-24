@@ -1,6 +1,6 @@
 import argparse
 import twitter
-#from ORM import Operations
+from ORM import Operations
 import sys
 from datetime import datetime
 from pprint import pprint
@@ -30,10 +30,10 @@ def args():
 if __name__ == '__main__':
   args = args()
 
-  for location in [1]:#Operations.QueryLocation():
-    trends = api.GetTrendsWoeid(location)
+  for location in Operations.QueryLocation():
+    trends = api.GetTrendsWoeid(location.Id)
     data = {}
-    data['location'] = location
+    data['location'] = location.Id
     data['time'] = datetime.now()
     data['trends'] = [
       {
