@@ -36,10 +36,12 @@ class Trend(Base):
   Id = Column('id', Integer, primary_key=True)
   Value = Column('value', Text)
   Place = Column('place', Integer)
+  Volume = Column('volume', Integer)
   Run = Column('run', Integer, ForeignKey('run.id'))
 
   def __init__(self, data):
     self.Value = data['value']
+    self.Volume = data['volume']
     self.Place = data['place']
     self.Run = data['run']
 

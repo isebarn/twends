@@ -35,7 +35,13 @@ if __name__ == '__main__':
     data = {}
     data['location'] = location.Id
     data['time'] = datetime.now()
-    data['trends'] = [{'place': idx, 'value': value.__dict__['_json']['name']}
+    data['trends'] = [
+      {
+      'place': idx,
+      'value': value.__dict__['_json']['name'],
+      'volume': value.__dict__['_json']['tweet_volume']
+      }
       for idx, value in enumerate(trends[0:args.count])]
 
-    Operations.SaveRun(data)
+    [pprint(x.__dict__) for x in trends]
+    #Operations.SaveRun(data)
